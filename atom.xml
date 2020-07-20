@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bowei&#39;s Blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://fengbw.github.io/"/>
+  <updated>2020-07-20T02:39:32.544Z</updated>
+  <id>http://fengbw.github.io/</id>
+  
+  <author>
+    <name>Bowei Feng</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>My First Blog</title>
+    <link href="http://fengbw.github.io/2020/07/19/my-first-blog/"/>
+    <id>http://fengbw.github.io/2020/07/19/my-first-blog/</id>
+    <published>2020-07-20T02:36:00.000Z</published>
+    <updated>2020-07-20T02:39:32.544Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;This is my first blog.&lt;/p&gt;
+&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hexo" scheme="http://fengbw.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://fengbw.github.io/2020/07/19/hello-world/"/>
+    <id>http://fengbw.github.io/2020/07/19/hello-world/</id>
+    <published>2020-07-20T01:17:19.012Z</published>
+    <updated>2020-07-20T01:17:19.013Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+        
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
+  
+</feed>
