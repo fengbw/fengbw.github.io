@@ -81,15 +81,15 @@
 
 
 
-<meta name="description" content="This is my first blog. 1a &#x3D; 100">
+<meta name="description" content="#This is my first blog. 1a &#x3D; 100  12345678910111213141516171819&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;&lt;!DOCTYPE hibernate-mapping PUBLIC     &quot;-&#x2F;&#x2F;Hibernate&#x2F;Hibernate Mapping DTD 3.0&#x2F;&#x2F;EN&quot;    &quot;ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="My First Blog">
 <meta property="og:url" content="http://fengbw.github.io/2020/07/19/my-first-blog/index.html">
 <meta property="og:site_name" content="Bowei&#39;s Blog">
-<meta property="og:description" content="This is my first blog. 1a &#x3D; 100">
+<meta property="og:description" content="#This is my first blog. 1a &#x3D; 100  12345678910111213141516171819&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;&lt;!DOCTYPE hibernate-mapping PUBLIC     &quot;-&#x2F;&#x2F;Hibernate&#x2F;Hibernate Mapping DTD 3.0&#x2F;&#x2F;EN&quot;    &quot;ht">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-20T02:36:00.000Z">
-<meta property="article:modified_time" content="2020-07-20T02:39:32.544Z">
+<meta property="article:modified_time" content="2020-07-28T01:24:00.163Z">
 <meta property="article:author" content="Bowei Feng">
 <meta property="article:tag" content="Hexo">
 <meta name="twitter:card" content="summary">
@@ -366,8 +366,11 @@
       
 
       
-        <p>This is my first blog.</p>
+        <p>#This is my first blog.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">hibernate-mapping</span> <span class="meta-keyword">PUBLIC</span> </span></span><br><span class="line"><span class="meta">    <span class="meta-string">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.com.list.Emp"</span> <span class="attr">table</span>=<span class="string">"emp_403"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"eid"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"ename"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">bag</span> <span class="attr">name</span>=<span class="string">"phoneno"</span> <span class="attr">cascade</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">one-to-many</span> <span class="attr">class</span>=<span class="string">"com.hibernate.com.list.PhoneNumber"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">bag</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.com.list.PhoneNumber"</span> <span class="attr">table</span>=<span class="string">"phone_403"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"pid"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"network"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"phonenumber"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 
       
     </div>
