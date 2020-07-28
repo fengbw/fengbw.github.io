@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fengbw.github.io/"/>
-  <updated>2020-07-28T01:24:00.163Z</updated>
+  <updated>2020-07-28T13:38:13.293Z</updated>
   <id>http://fengbw.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>My First Blog</title>
-    <link href="http://fengbw.github.io/2020/07/19/my-first-blog/"/>
-    <id>http://fengbw.github.io/2020/07/19/my-first-blog/</id>
-    <published>2020-07-20T02:36:00.000Z</published>
-    <updated>2020-07-28T01:24:00.163Z</updated>
+    <title>Hibernate one-to-many relationships : Map</title>
+    <link href="http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/"/>
+    <id>http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/</id>
+    <published>2020-07-28T01:30:28.000Z</published>
+    <updated>2020-07-28T13:38:13.293Z</updated>
     
     <summary type="html">
     
@@ -29,8 +29,32 @@
       
         
         
-          &lt;p&gt;#This is my first blog.&lt;/p&gt;
-&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+          &lt;h1 id=&quot;Hibernate-one-to-many-relationships-Map&quot;&gt;&lt;a href=&quot;#Hibernate-one-to-many-relationships-Map&quot; class=&quot;headerlink&quot; title=&quot;Hibernate
+        
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hibernate" scheme="http://fengbw.github.io/tags/Hibernate/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My First Blog</title>
+    <link href="http://fengbw.github.io/2020/07/19/my-first-blog/"/>
+    <id>http://fengbw.github.io/2020/07/19/my-first-blog/</id>
+    <published>2020-07-20T02:36:00.000Z</published>
+    <updated>2020-07-28T01:28:25.483Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;This-is-my-first-blog&quot;&gt;&lt;a href=&quot;#This-is-my-first-blog&quot; class=&quot;headerlink&quot; title=&quot;This is my first blog&quot;&gt;&lt;/a&gt;This is my first
         
       
     
