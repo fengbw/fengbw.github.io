@@ -48,17 +48,12 @@
     <link href="http://fengbw.github.io/2020/08/05/java-core-interview/"/>
     <id>http://fengbw.github.io/2020/08/05/java-core-interview/</id>
     <published>2020-08-06T02:00:45.000Z</published>
-    <updated>2020-08-06T02:02:20.038Z</updated>
+    <updated>2020-08-06T02:45:13.081Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h6 id=&quot;JDK-and-JRE&quot;&gt;&lt;a href=&quot;#JDK-and-JRE&quot; class=&quot;headerlink&quot; title=&quot;JDK and JRE&quot;&gt;&lt;/a&gt;JDK and JRE&lt;/h6&gt;&lt;p&gt;&lt;strong&gt;The Java Runtime
-        
-      
+      &lt;h6 id=&quot;JDK-and-JRE&quot;&gt;&lt;a href=&quot;#JDK-and-JRE&quot; class=&quot;headerlink&quot; title=&quot;JDK and JRE&quot;&gt;&lt;/a&gt;JDK and JRE&lt;/h6&gt;&lt;p&gt;&lt;strong&gt;The Java Runtime Environment (JRE) \&lt;/strong&gt;is basically the Java Virtual Machine (&lt;strong&gt;JVM&lt;/strong&gt;) where your Java programs are being executed.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The Java Development Kit (JDK)&lt;/strong&gt; is the full featured Software Development Kit for Java, including the JRE, the compilers and tools (like JavaDoc, and Java Debugger)&lt;/p&gt;
     
     </summary>
     
@@ -75,17 +70,14 @@
     <link href="http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/"/>
     <id>http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/</id>
     <published>2020-07-28T01:30:28.000Z</published>
-    <updated>2020-07-28T13:38:13.293Z</updated>
+    <updated>2020-08-06T02:45:27.722Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;Hibernate-one-to-many-relationships-Map&quot;&gt;&lt;a href=&quot;#Hibernate-one-to-many-relationships-Map&quot; class=&quot;headerlink&quot; title=&quot;Hibernate
-        
-      
+      &lt;h1 id=&quot;Hibernate-one-to-many-relationships-Map&quot;&gt;&lt;a href=&quot;#Hibernate-one-to-many-relationships-Map&quot; class=&quot;headerlink&quot; title=&quot;Hibernate one-to-many relationships : Map&quot;&gt;&lt;/a&gt;Hibernate one-to-many relationships : Map&lt;/h1&gt;&lt;blockquote&gt;
+&lt;p&gt;At first, let us talk about some simple condition, when we use some basic class String, Integer, Date in Map&amp;lt;key, value&amp;gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Here, we create a Team class as example:&lt;/p&gt;
     
     </summary>
     
@@ -125,17 +117,11 @@
     <link href="http://fengbw.github.io/2020/07/19/hello-world/"/>
     <id>http://fengbw.github.io/2020/07/19/hello-world/</id>
     <published>2020-07-20T01:17:19.012Z</published>
-    <updated>2020-08-04T01:46:34.079Z</updated>
+    <updated>2020-08-06T02:45:36.135Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-        
-      
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
     
     </summary>
     
