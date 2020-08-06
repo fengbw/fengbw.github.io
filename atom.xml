@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fengbw.github.io/"/>
-  <updated>2020-08-06T02:03:58.406Z</updated>
+  <updated>2020-08-06T02:42:59.600Z</updated>
   <id>http://fengbw.github.io/</id>
   
   <author>
@@ -21,17 +21,11 @@
     <link href="http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/"/>
     <id>http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/</id>
     <published>2020-08-06T02:03:00.000Z</published>
-    <updated>2020-08-06T02:03:58.406Z</updated>
+    <updated>2020-08-06T02:42:59.600Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;JDBC&quot;&gt;&lt;a href=&quot;#JDBC&quot; class=&quot;headerlink&quot; title=&quot;JDBC&quot;&gt;&lt;/a&gt;JDBC&lt;/h1&gt;&lt;h4 id=&quot;what-is-jdbc&quot;&gt;&lt;a href=&quot;#what-is-jdbc&quot; class=&quot;headerlink&quot;
-        
-      
+      &lt;h1 id=&quot;JDBC&quot;&gt;&lt;a href=&quot;#JDBC&quot; class=&quot;headerlink&quot; title=&quot;JDBC&quot;&gt;&lt;/a&gt;JDBC&lt;/h1&gt;&lt;h4 id=&quot;what-is-jdbc&quot;&gt;&lt;a href=&quot;#what-is-jdbc&quot; class=&quot;headerlink&quot; title=&quot;what is jdbc&quot;&gt;&lt;/a&gt;what is jdbc&lt;/h4&gt;&lt;p&gt;JDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition). JDBC API uses JDBC drivers to connect with the database. There are four types of JDBC drivers:&lt;/p&gt;
     
     </summary>
     
