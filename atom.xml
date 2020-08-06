@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://fengbw.github.io/"/>
-  <updated>2020-07-28T13:38:13.293Z</updated>
+  <updated>2020-08-06T02:03:58.406Z</updated>
   <id>http://fengbw.github.io/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Servlet JSP JDBC Hibernate Interview</title>
+    <link href="http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/"/>
+    <id>http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/</id>
+    <published>2020-08-06T02:03:00.000Z</published>
+    <updated>2020-08-06T02:03:58.406Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;JDBC&quot;&gt;&lt;a href=&quot;#JDBC&quot; class=&quot;headerlink&quot; title=&quot;JDBC&quot;&gt;&lt;/a&gt;JDBC&lt;/h1&gt;&lt;h4 id=&quot;what-is-jdbc&quot;&gt;&lt;a href=&quot;#what-is-jdbc&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="interview" scheme="http://fengbw.github.io/categories/interview/"/>
+    
+    
+      <category term="Hibernate" scheme="http://fengbw.github.io/tags/Hibernate/"/>
+    
+      <category term="Servlet" scheme="http://fengbw.github.io/tags/Servlet/"/>
+    
+      <category term="JSP" scheme="http://fengbw.github.io/tags/JSP/"/>
+    
+      <category term="JDBC" scheme="http://fengbw.github.io/tags/JDBC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Core Interview</title>
+    <link href="http://fengbw.github.io/2020/08/05/java-core-interview/"/>
+    <id>http://fengbw.github.io/2020/08/05/java-core-interview/</id>
+    <published>2020-08-06T02:00:45.000Z</published>
+    <updated>2020-08-06T02:02:20.038Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h6 id=&quot;JDK-and-JRE&quot;&gt;&lt;a href=&quot;#JDK-and-JRE&quot; class=&quot;headerlink&quot; title=&quot;JDK and JRE&quot;&gt;&lt;/a&gt;JDK and JRE&lt;/h6&gt;&lt;p&gt;&lt;strong&gt;The Java Runtime
+        
+      
+    
+    </summary>
+    
+    
+      <category term="interview" scheme="http://fengbw.github.io/categories/interview/"/>
+    
+    
+      <category term="Java" scheme="http://fengbw.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Hibernate one-to-many relationships : Map</title>
@@ -71,7 +131,7 @@
     <link href="http://fengbw.github.io/2020/07/19/hello-world/"/>
     <id>http://fengbw.github.io/2020/07/19/hello-world/</id>
     <published>2020-07-20T01:17:19.012Z</published>
-    <updated>2020-07-20T01:17:19.013Z</updated>
+    <updated>2020-08-04T01:46:34.079Z</updated>
     
     <summary type="html">
     

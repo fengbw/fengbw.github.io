@@ -27,21 +27,120 @@
       </tags>
   </entry>
   <entry>
-    <title>My First Blog</title>
-    <url>/2020/07/19/my-first-blog/</url>
-    <content><![CDATA[<h1 id="This-is-my-first-blog"><a href="#This-is-my-first-blog" class="headerlink" title="This is my first blog"></a>This is my first blog</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+    <title>Java Core Interview</title>
+    <url>/2020/08/05/java-core-interview/</url>
+    <content><![CDATA[<h6 id="JDK-and-JRE"><a href="#JDK-and-JRE" class="headerlink" title="JDK and JRE"></a>JDK and JRE</h6><p><strong>The Java Runtime Environment (JRE) \</strong>is basically the Java Virtual Machine (<strong>JVM</strong>) where your Java programs are being executed.</p>
+<p><strong>The Java Development Kit (JDK)</strong> is the full featured Software Development Kit for Java, including the JRE, the compilers and tools (like JavaDoc, and Java Debugger)</p>
+<h6 id="JShell"><a href="#JShell" class="headerlink" title="JShell"></a>JShell</h6><p>The Java Shell tool (JShell) is an interactive tool for learning the Java programming language and prototyping Java code. JShell is a Read-Evaluate-Print Loop (REPL), which evaluates declarations, statements, and expressions as they are entered and immediately shows the results. The tool is run from the command line.</p>
+<h6 id="Encapsulation-Abstraction-polymorphism-Inheritance"><a href="#Encapsulation-Abstraction-polymorphism-Inheritance" class="headerlink" title="Encapsulation Abstraction polymorphism Inheritance"></a>Encapsulation Abstraction polymorphism Inheritance</h6><ul>
+<li>Encapsulation:Combining both data and code into single unit is called encapsulation.</li>
+<li>Abstraction :Presenting necessary things and hiding un necessary things is called abstraction.</li>
+<li>Polymorphism:One object is behaving differently in different situations we say that particular object is exhibiting polymorphism.</li>
+<li>Inheritance:Aquiring superclass properties from subclass is called inheritance.</li>
+</ul>
+<h6 id="2-types-exceptions"><a href="#2-types-exceptions" class="headerlink" title="2 types exceptions"></a>2 types exceptions</h6><p>checked exceptions and unchecked exceptions, <strong>checked exceptions</strong> must be declared in a method or a constructor’s throws clause</p>
+<h6 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h6><p>A Java virtual machine (JVM) is a process virtual machine that can execute Java bytecode.</p>
+<h6 id="static"><a href="#static" class="headerlink" title="static"></a>static</h6><p>The <code>static</code> keyword denotes that a member variable or method can be accessed, <em>without requiring an instantiation of the class to which it belongs</em>.</p>
+<p>A user cannot override static methods in Java, because method overriding is based upon dynamic binding at runtime and static methods are statically binded at compile time. A static method is not associated with any instance of a class so the concept is not applicable.</p>
+<h6 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h6><p><code>volatile</code> has semantics for memory visibility. Basically, the value of a volatile field becomes visible to all readers (other threads in particular) after a write operation completes on it.</p>
+<h6 id="overload-and-override"><a href="#overload-and-override" class="headerlink" title="overload and override"></a>overload and override</h6><ul>
+<li><p>Method <strong>overloading</strong> in Java occurs when two or more methods in the same class have the exact same name, but different parameters.</p>
+</li>
+<li><p>Method <strong>overriding</strong> is defined as the case when a child class redefines the same method as a parent class. Overridden methods must have the same name, argument list, and return type. The overriding method may not limit the access of the method it overrides.</p>
+</li>
+</ul>
+<h6 id="Data-Types-and-autoboxing-unboxing"><a href="#Data-Types-and-autoboxing-unboxing" class="headerlink" title="Data Types and autoboxing/unboxing"></a>Data Types and autoboxing/unboxing</h6><p>The eight primitive data types supported by the Java programming language are:</p>
+<ul>
+<li>byte</li>
+<li>short</li>
+<li>int</li>
+<li>long</li>
+<li>float</li>
+<li>double</li>
+<li>boolean</li>
+<li>char</li>
+</ul>
+<p><strong>Autoboxing</strong> is the automatic conversion made by the Java compiler between the primitive types and their corresponding object wrapper classes. If the conversion goes the other way, this operation is called <strong>unboxing</strong>.</p>
+<h6 id="abstract-and-interface"><a href="#abstract-and-interface" class="headerlink" title="abstract and interface"></a>abstract and interface</h6><ul>
+<li>All methods in an interface are implicitly abstract. On the other hand, an abstract class may contain both abstract and non-abstract methods.</li>
+<li>A class may implement a number of Interfaces, but can extend only one abstract class.</li>
+<li>In order for a class to implement an interface, it must implement all its declared methods. However, a class may not implement all declared methods of an abstract class. Though, in this case, the sub-class must also be declared as abstract.</li>
+<li>Abstract classes can implement interfaces without even providing the implementation of interface methods.</li>
+</ul>
+<h6 id="Collections-Framework"><a href="#Collections-Framework" class="headerlink" title="Collections Framework"></a>Collections Framework</h6><ul>
+<li><strong>Collection</strong>, which represents a group of objects known as its elements.</li>
+<li><strong>Set</strong>, which is a collection that cannot contain duplicate elements.</li>
+<li><strong>List</strong>, which is an ordered collection and can contain duplicate elements.</li>
+<li><strong>Map</strong>, which is an object that maps keys to values and cannot contain duplicate keys.</li>
+</ul>
+<h6 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h6><p>The <code>Iterator</code> interface provides a number of methods that are able to iterate over any Collection. Each Java <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html" target="_blank" rel="noopener">Collection</a> contains the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html" target="_blank" rel="noopener">Iterator</a> method that returns an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html" target="_blank" rel="noopener">Iterator</a> instance. Iterators are capable of removing elements from the underlying collection during the iteration.</p>
+<h6 id="Array-and-ArrayList"><a href="#Array-and-ArrayList" class="headerlink" title="Array and ArrayList"></a>Array and ArrayList</h6><ul>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html" target="_blank" rel="noopener">Arrays</a> can contain primitive or objects, while an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> can contain only objects.</li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html" target="_blank" rel="noopener">Arrays</a> have fixed size, while an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> is dynamic.</li>
+<li>An <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> provides more methods and features, such as addAll, removeAll, iterator, etc.</li>
+</ul>
+<h6 id="ArrayList-and-LinkedList"><a href="#ArrayList-and-LinkedList" class="headerlink" title="ArrayList and LinkedList"></a>ArrayList and LinkedList</h6><ul>
+<li>An <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> is an index based data structure backed by an <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Array.html" target="_blank" rel="noopener">Array</a>. It provides random access to its elements with a performance equal to O(1). On the other hand, a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> stores its data as list of elements and every element is linked to its previous and next element. In this case, the search operation for an element has execution time equal to O(n).</li>
+<li>The Insertion, addition and removal operations of an element are faster in a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> compared to an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a>, because there is no need of resizing an array or updating the index when an element is added in some arbitrary position inside the collection.</li>
+<li>A <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> consumes more memory than an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a>, because every node in a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> stores two references, one for its previous element and one for its next element.</li>
+</ul>
+<h6 id="HashMap-and-HashTable"><a href="#HashMap-and-HashTable" class="headerlink" title="HashMap and HashTable"></a>HashMap and HashTable</h6><ol>
+<li><code>Hashtable</code> is synchronized, whereas <code>HashMap</code> is not. This makes <code>HashMap</code> better for non-threaded applications, as unsynchronized Objects typically perform better than synchronized ones.</li>
+<li><code>Hashtable</code> does not allow <code>null</code> keys or values. <code>HashMap</code> allows one <code>null</code> key and any number of <code>null</code> values.</li>
+<li>One of HashMap’s subclasses is <code>LinkedHashMap</code>, so in the event that you’d want predictable iteration order (which is insertion order by default), you could easily swap out the <code>HashMap</code> for a <code>LinkedHashMap</code>. This wouldn’t be as easy if you were using <code>Hashtable</code>.</li>
+</ol>
+<h6 id="HashMap-LinkedHashMap-and-TreeMap"><a href="#HashMap-LinkedHashMap-and-TreeMap" class="headerlink" title="HashMap, LinkedHashMap and TreeMap"></a>HashMap, LinkedHashMap and TreeMap</h6><ul>
+<li><code>HashMap</code> makes absolutely no guarantees about the iteration order. It can (and will) even change completely when new elements are added.</li>
+<li><code>TreeMap</code> will iterate according to the “natural ordering” of the keys according to their <code>compareTo()</code>method (or an externally supplied <code>Comparator</code>). Additionally, it implements the <code>SortedMap</code> interface, which contains methods that depend on this sort order.</li>
+<li><code>LinkedHashMap</code> will iterate in the order in which the entries were put into the map</li>
+</ul>
+<h6 id="HashSet-and-TreeSet"><a href="#HashSet-and-TreeSet" class="headerlink" title="HashSet and TreeSet"></a>HashSet and TreeSet</h6><p>The <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html" target="_blank" rel="noopener">HashSet</a> is Implemented using a hash table and thus, its elements are not ordered. The add, remove, and contains methods of a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html" target="_blank" rel="noopener">HashSet</a> have constant time complexity O(1). On the other hand, a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html" target="_blank" rel="noopener">TreeSet</a> is implemented using a tree structure. The elements in a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html" target="_blank" rel="noopener">TreeSet</a> are sorted, and thus, the add, remove, and contains methods have time complexity of O(logn).</p>
+<h6 id="garbage-collection"><a href="#garbage-collection" class="headerlink" title="garbage collection"></a>garbage collection</h6><p>The purpose of garbage collection is to identify and discard those objects that are no longer needed by the application, in order for the resources to be reclaimed and reused.</p>
+<h6 id="Exception-and-Error"><a href="#Exception-and-Error" class="headerlink" title="Exception and Error"></a>Exception and Error</h6><ul>
+<li>An <strong>Error</strong> “indicates serious problems that a reasonable application should not try to catch.”</li>
+<li>An <strong>Exception</strong> “indicates conditions that a reasonable application might want to catch.”</li>
+</ul>
+<h6 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h6><p>A <em>finally</em> block will always be executed, whether or not an exception is actually thrown. Even in the case where the catch statement is missing and an exception is thrown, the finally block will still be executed. Last thing to mention is that the finally block is used to release resources like I/O buffers, database connections, etc.</p>
+<h6 id="Serialization-and-Deserialization"><a href="#Serialization-and-Deserialization" class="headerlink" title="Serialization and Deserialization"></a>Serialization and Deserialization</h6><p>Java provides a mechanism, called object serialization where an object can be represented as a sequence of bytes and includes the object’s data, as well as information about the object’s type, and the types of data stored in the object.</p>
+<p>Deserialisation is the reverse process of converting an object from its flattened state to a live object.</p>
+<h6 id="trasient"><a href="#trasient" class="headerlink" title="trasient"></a>trasient</h6><p><strong>transient</strong> is a <strong>Java keyword</strong> which marks a member <strong>variable</strong> not to be serialized when it is persisted to streams of bytes. When an object is transferred through the network, the object needs to be ‘serialized’. Serialization converts the object state to serial bytes.</p>
+<h6 id="iterate-each-entry-in-Map"><a href="#iterate-each-entry-in-Map" class="headerlink" title="iterate each entry in Map"></a>iterate each entry in Map</h6><figure class="highlight java"><table><tr><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = ...</span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">    System.out.println(entry.getKey() + <span class="string">"/"</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">hibernate-mapping</span> <span class="meta-keyword">PUBLIC</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.com.list.Emp"</span> <span class="attr">table</span>=<span class="string">"emp_403"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"eid"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"ename"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">bag</span> <span class="attr">name</span>=<span class="string">"phoneno"</span> <span class="attr">cascade</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">one-to-many</span> <span class="attr">class</span>=<span class="string">"com.hibernate.com.list.PhoneNumber"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">bag</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.com.list.PhoneNumber"</span> <span class="attr">table</span>=<span class="string">"phone_403"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"pid"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"network"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"phonenumber"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+<h6 id="different-ways-for-thread"><a href="#different-ways-for-thread" class="headerlink" title="different ways for thread"></a>different ways for thread</h6><ul>
+<li>A class may extend the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html" target="_blank" rel="noopener">Thread</a> class.</li>
+<li>A class may implement the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html" target="_blank" rel="noopener">Runnable</a> interface.</li>
+<li>An application can use the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html" target="_blank" rel="noopener">Executor</a> framework, in order to create a thread pool.</li>
+</ul>
+<h6 id="deadlock"><a href="#deadlock" class="headerlink" title="deadlock"></a>deadlock</h6><p>A condition that occurs when <a href="http://www.javacodegeeks.com/2013/01/java-deadlock-example-how-to-analyze-deadlock-situation.html" target="_blank" rel="noopener">two processes are waiting for each other to complete</a>, before proceeding. The result is that both processes wait endlessly.</p>
+<h6 id="comparable-and-comparator"><a href="#comparable-and-comparator" class="headerlink" title="comparable and comparator"></a>comparable and comparator</h6><ul>
+<li>if sorting of objects needs to be based on natural order then use Comparable whereas if you sorting needs to be done on attributes of different objects, then use Comparator</li>
+<li>A comparable object is capable of comparing itself with another object. The class itself must implements the java.lang.Comparable interface to compare its instances.</li>
+<li>Comparator is external to the element type we are comparing. It’s a separate class. We create multiple separate classes (that implement Comparator) to compare by different members.</li>
+</ul>
+<h6 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h6><p>The finalize method is called by the garbage collector, just before releasing the object’s memory. It is normally advised to release resources held by the object inside the finalize method.</p>
+<h6 id="StringBuffer-and-StringBulider"><a href="#StringBuffer-and-StringBulider" class="headerlink" title="StringBuffer and StringBulider"></a>StringBuffer and StringBulider</h6><ul>
+<li><p><code>StringBuffer</code> is synchronized, <code>StringBuilder</code> is not.</p>
+</li>
+<li><p><code>StringBuilder</code> is faster than <code>StringBuffer</code> because it’s not synchronized.</p>
+</li>
+</ul>
+<h6 id="throw-and-throws"><a href="#throw-and-throws" class="headerlink" title="throw and throws"></a>throw and throws</h6><p>The <code>throw</code> keyword is used to explicitly raise a exception within the program. On the contrary, the <code>throws</code> clause is used to indicate those exceptions that are not handled by a method. Each method must explicitly specify which exceptions does not handle, so the callers of that method can guard against possible exceptions. Finally, multiple exceptions are separated by a comma.</p>
+<h6 id="pass-by-reference-or-pass-by-value"><a href="#pass-by-reference-or-pass-by-value" class="headerlink" title="pass-by-reference or pass-by-value"></a>pass-by-reference or pass-by-value</h6><p>Java is always <strong>pass-by-value</strong>. Unfortunately, when we pass the value of an object, we are passing the <em>reference</em> to it. There is no such thing as “pass-by-reference” in Java.</p>
 ]]></content>
+      <categories>
+        <category>interview</category>
+      </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>Java</tag>
       </tags>
   </entry>
   <entry>
     <title>Hello World</title>
     <url>/2020/07/19/hello-world/</url>
     <content><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<h2 id="Quick-Starr"><a href="#Quick-Starr" class="headerlink" title="Quick Starr"></a>Quick Starr</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
 
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
 <h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
@@ -54,5 +153,263 @@
 
 <p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>My First Blog</title>
+    <url>/2020/07/19/my-first-blog/</url>
+    <content><![CDATA[<h1 id="This-is-my-first-blog"><a href="#This-is-my-first-blog" class="headerlink" title="This is my first blog"></a>This is my first blog</h1><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">a = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">hibernate-mapping</span> <span class="meta-keyword">PUBLIC</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.com.list.Emp"</span> <span class="attr">table</span>=<span class="string">"emp_403"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"eid"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"ename"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">bag</span> <span class="attr">name</span>=<span class="string">"phoneno"</span> <span class="attr">cascade</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">one-to-many</span> <span class="attr">class</span>=<span class="string">"com.hibernate.com.list.PhoneNumber"</span> /&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">bag</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.com.list.PhoneNumber"</span> <span class="attr">table</span>=<span class="string">"phone_403"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"pid"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"network"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"phonenumber"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Servlet JSP JDBC Hibernate Interview</title>
+    <url>/2020/08/05/servlet-jsp-jdbc-hibernate-interview/</url>
+    <content><![CDATA[<h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h4 id="what-is-jdbc"><a href="#what-is-jdbc" class="headerlink" title="what is jdbc"></a>what is jdbc</h4><p>JDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition). JDBC API uses JDBC drivers to connect with the database. There are four types of JDBC drivers:</p>
+<ul>
+<li>JDBC-ODBC Bridge Driver</li>
+<li>Native Driver</li>
+<li>Network Protocol Driver</li>
+<li>Thin Driver</li>
+</ul>
+<p>We can use JDBC API to access tabular data stored in any relational database. By the help of JDBC API, we can save, update, delete and fetch data from the database.</p>
+<h5 id="How-to-connect"><a href="#How-to-connect" class="headerlink" title="How to connect"></a>How to connect</h5><ul>
+<li><p>Register the Driver class</p>
+<p>The <strong>forName()</strong> method of Class class is used to register the driver class. This method is used to dynamically load the driver class.</p>
+</li>
+<li><p>Create connection</p>
+<p>The <strong>getConnection()</strong> method of DriverManager class is used to establish connection with the database.</p>
+</li>
+<li><p>Create statement</p>
+<p>The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database.</p>
+</li>
+<li><p>Execute queries</p>
+<p>The executeQuery() method of Statement interface is used to execute queries to the database. This method returns the object of ResultSet that can be used to get all the records of a table.</p>
+</li>
+<li><p>Close connection</p>
+<p>By closing connection object statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.</p>
+</li>
+</ul>
+<h5 id="Connection-interface"><a href="#Connection-interface" class="headerlink" title="Connection interface"></a>Connection interface</h5><ul>
+<li><p><strong>createStatement():</strong> creates a statement object that can be used to execute SQL queries</p>
+</li>
+<li><p><strong>commit():</strong> saves the changes made since the previous commit/rollback permanent</p>
+</li>
+<li><p><strong>rollback():</strong> Drops all changes made since the previous commit/rollback</p>
+</li>
+<li><p><strong>close():</strong> closes the connection and Releases a JDBC resources immediately</p>
+</li>
+</ul>
+<h5 id="Statement-interface"><a href="#Statement-interface" class="headerlink" title="Statement interface"></a>Statement interface</h5><table>
+<thead>
+<tr>
+<th><strong>1) public ResultSet executeQuery(String sql):</strong> is used to execute SELECT query. It returns the object of ResultSet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>2) public int executeUpdate(String sql):</strong> is used to execute specified query, it may be create, drop, insert, update, delete etc.</td>
+</tr>
+<tr>
+<td><strong>3) public boolean execute(String sql):</strong> is used to execute queries that may return multiple results.</td>
+</tr>
+<tr>
+<td><strong>4) public int[] executeBatch():</strong> is used to execute batch of commands.</td>
+</tr>
+</tbody></table>
+<h5 id="ResultSet-interface"><a href="#ResultSet-interface" class="headerlink" title="ResultSet interface"></a>ResultSet interface</h5><p>The object of ResultSet maintains a cursor pointing to a row of a table. Initially, cursor points to before the first row.</p>
+<ul>
+<li>next()</li>
+<li>getInt(int row) or getInt(String colimnName)</li>
+<li>getString(int row) or getString(String colimnName)</li>
+</ul>
+<h5 id="PreparedStatement-interface"><a href="#PreparedStatement-interface" class="headerlink" title="PreparedStatement interface"></a>PreparedStatement interface</h5><p>The PreparedStatement interface is a subinterface of Statement. It is used to execute parameterized query.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">String sql=<span class="string">"insert into emp values(?,?,?)"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, we are passing parameter (?)(question mark) for the values. Its value will be set by calling the setter methods of PreparedStatement.</p>
+<p><strong>Improves performance</strong>: The performance of the application will be faster if you use PreparedStatement interface because query is compiled only once.</p>
+<p>setInt() setString() setFloat() setDouble() executeQuery() executeUpdate()</p>
+<h5 id="ResultSetMetaData-Interface"><a href="#ResultSetMetaData-Interface" class="headerlink" title="ResultSetMetaData Interface"></a>ResultSetMetaData Interface</h5><p>The metadata means data about data i.e. we can get further information from the data. If you have to get metadata of a table like total number of column, column name, column type etc. , ResultSetMetaData interface is useful because it provides methods to get metadata from the ResultSet object.</p>
+<p>getColumnCount() getColumnName() getColumnTypeName() getTableName()</p>
+<p>The <strong>getMetaData()</strong> method of ResultSet interface returns the object of ResultSetMetaData</p>
+<h5 id="image"><a href="#image" class="headerlink" title="image"></a>image</h5><p>You can store images in the database in java by the help of <strong>PreparedStatement</strong> interface.</p>
+<p>The <strong>setBinaryStream()</strong> method of PreparedStatement is used to set Binary information into the parameterIndex.</p>
+<p><strong>setBinaryStream(int paramIndex,InputStream stream)</strong></p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">FileInputStream fin=<span class="keyword">new</span> FileInputStream(<span class="string">"d:\\g.jpg"</span>);  </span><br><span class="line">ps.setBinaryStream(<span class="number">2</span>,fin,fin.available());</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="file"><a href="#file" class="headerlink" title="file"></a>file</h5><p>The <strong>setCharacterStream()</strong> method of PreparedStatement is used to set character information into the parameterIndex.</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">File f=<span class="keyword">new</span> File(<span class="string">"d:\\myfile.txt"</span>);  </span><br><span class="line">FileReader fr=<span class="keyword">new</span> FileReader(f);  </span><br><span class="line"></span><br><span class="line">ps.setInt(<span class="number">1</span>,<span class="number">101</span>);  </span><br><span class="line">ps.setCharacterStream(<span class="number">2</span>,fr,(<span class="keyword">int</span>)f.length());</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="CallableStatement-Interface"><a href="#CallableStatement-Interface" class="headerlink" title="CallableStatement Interface"></a>CallableStatement Interface</h5><p>CallableStatement interface is used to call the <strong>stored procedures and functions</strong>.</p>
+<p>We can have business logic on the database by the use of stored procedures and functions that will make the performance better because these are precompiled.</p>
+<h5 id="Transaction-Management-in-JDBC"><a href="#Transaction-Management-in-JDBC" class="headerlink" title="Transaction Management in JDBC"></a>Transaction Management in JDBC</h5><ul>
+<li>setAutoCommit(boolean status): tt is true bydefault means each transaction is committed bydefault</li>
+<li>void commit(): commits the transaction</li>
+<li>void rollback(): cancels the transaction.</li>
+</ul>
+<h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h5 id="what-is-Servlet"><a href="#what-is-Servlet" class="headerlink" title="what is Servlet"></a>what is Servlet</h5><p><strong>Servlet</strong> technology is used to create a web application (resides at server side and generates a dynamic web page)</p>
+<p>Servlet is a Server side Technology<br>It will support Thread based Components</p>
+<ul>
+<li>Two Packages</li>
+</ul>
+<p>import javax.servlet.*;</p>
+<p>import javax.servlet.http.*</p>
+<ul>
+<li>Life Cycle Stages:</li>
+</ul>
+<p>init()</p>
+<p>service()</p>
+<p>destroy()</p>
+<ul>
+<li>Servlet Architecture Flow:</li>
+</ul>
+<p>It is the communication between Web Client(User) and Web Server.</p>
+<p>Inside Web Server, it will have Web Container.</p>
+<p>By using init(), Web Container will initialise the request which came from the client(Web User).</p>
+<p>Web Container will create one Thread Internally, By using service(), Web Server will process the response.</p>
+<p>After sending Response to the Web User, For killing of the Thread we will use destroy().</p>
+<ul>
+<li>3 types of Servlet:</li>
+</ul>
+<p>Servlet(Interface)—-init(),service(),destroy()</p>
+<p>Generic Servlet(Abstract Class)—service()</p>
+<p>HTTP Servlet(class)—service()–doGet(),doPost()</p>
+<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h5 id="JSP-Scripting-elements"><a href="#JSP-Scripting-elements" class="headerlink" title="JSP Scripting elements"></a>JSP Scripting elements</h5><p>The scripting elements provides the ability to insert java code inside the jsp. There are three types of scripting elements:</p>
+<ul>
+<li>scriptlet tag</li>
+<li>expression tag</li>
+<li>declaration tag</li>
+</ul>
+<h5 id="JSP-scriptlet-tag"><a href="#JSP-scriptlet-tag" class="headerlink" title="JSP scriptlet tag"></a>JSP scriptlet tag</h5><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%java source code %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="JSP-expression-tag"><a href="#JSP-expression-tag" class="headerlink" title="JSP expression tag"></a>JSP expression tag</h5><figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%=  statement %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="JSP-Declaration-Tag"><a href="#JSP-Declaration-Tag" class="headerlink" title="JSP Declaration Tag"></a>JSP Declaration Tag</h5> <figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%!  field or method declaration %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th align="left">Jsp Scriptlet Tag</th>
+<th align="left">Jsp Declaration Tag</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">The jsp scriptlet tag can only declare variables not methods.</td>
+<td align="left">The jsp declaration tag can declare variables as well as methods.</td>
+</tr>
+<tr>
+<td align="left">The declaration of scriptlet tag is placed inside the _jspService() method.</td>
+<td align="left">The declaration of jsp declaration tag is placed outside the _jspService() method.</td>
+</tr>
+</tbody></table>
+<h5 id="JSP-Implicit-Objects"><a href="#JSP-Implicit-Objects" class="headerlink" title="JSP Implicit Objects"></a>JSP Implicit Objects</h5><p>There are <strong>9 jsp implicit objects</strong>. These objects are <em>created by the web container</em> that are available to all the jsp pages</p>
+<p>out, request, response, config, session, application, page context, page, exception</p>
+<h5 id="JSP-directives"><a href="#JSP-directives" class="headerlink" title="JSP directives"></a>JSP directives</h5><p>The <strong>jsp directives</strong> are messages that tells the web container how to translate a JSP page into the corresponding servlet</p>
+<ul>
+<li>page directive</li>
+<li>include directive</li>
+<li>tag lib directive</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ directive attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>page directive</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ page attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>import contentType language info errorPage, etc</p>
+</li>
+<li><p>include directive</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"resourceName"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The include directive is used to include the contents of any resource it may be jsp file, html file or text file</p>
+</li>
+<li><p>tag lib directive</p>
+<figure class="highlight jsp"><table><tr><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">"uriofthetaglibrary"</span> prefix=<span class="string">"prefixoftaglibrary"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The JSP taglib directive is used to define a tag library that defines many tags. We use the TLD (Tag Library Descriptor) file to define the tags</p>
+</li>
+</ul>
+<h5 id="JSP-Action"><a href="#JSP-Action" class="headerlink" title="JSP Action"></a>JSP Action</h5><p>There are many JSP action tags or elements. Each JSP action tag is used to perform some specific tasks.</p>
+<p>The action tags are used to control the flow between pages and to use Java Bean.</p>
+<p>jsp:forward jsp:include jsp:param jsp:useBean</p>
+<h1 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h1><h5 id="what-is-hibernate"><a href="#what-is-hibernate" class="headerlink" title="what is hibernate"></a>what is hibernate</h5><ul>
+<li><p>Hibernate is a Java framework that simplifies the development of Java application to interact with the database.</p>
+</li>
+<li><p>It is an open source, lightweight, ORM (Object Relational Mapping) tool.</p>
+<p>An ORM tool simplifies the data creation, data manipulation and data access. It is a programming technique that maps the object to the data stored in the database.</p>
+</li>
+<li><p>Hibernate implements the specifications of JPA (Java Persistence API) for data persistence.</p>
+<p>Java Persistence API (JPA) is a Java specification that provides certain functionality and standard to ORM tools.</p>
+</li>
+</ul>
+<h5 id="Hibernate-Architecture"><a href="#Hibernate-Architecture" class="headerlink" title="Hibernate Architecture"></a>Hibernate Architecture</h5><p>Session Factory</p>
+<p>Session</p>
+<p>Transaction</p>
+<p>ConnectionProvider</p>
+<p>Transaction Factory</p>
+<h5 id="Steps-to-create-Hibernate-App"><a href="#Steps-to-create-Hibernate-App" class="headerlink" title="Steps to create Hibernate App"></a>Steps to create Hibernate App</h5><ol>
+<li>Create configuration object -&gt; config files and mapping files</li>
+<li>session factory object -&gt;which java object should match which table and what table to be created</li>
+<li>session object -&gt;perform db operations and tables</li>
+<li>transaction object -&gt;if all steps are executed successfully then onlu it will update the db</li>
+<li>close the session</li>
+</ol>
+<h5 id="4-files"><a href="#4-files" class="headerlink" title="4 files"></a>4 files</h5><p>entity class</p>
+<p>hibernate-mapping.xml</p>
+<p>hibernate-config.xml</p>
+<p>main class</p>
+<h5 id="configuration"><a href="#configuration" class="headerlink" title="configuration"></a>configuration</h5><ul>
+<li><strong>hbm2ddl.auto:</strong> which operationto be performed will be possible</li>
+<li><strong>show_sql:</strong> display query in STS console</li>
+<li><strong>dialect:</strong> it will talk to driver implementation for specifying the type of db used in hibernate(org.hibernate.dialect.MySQLDialect)</li>
+<li>connection.url</li>
+<li>connection.username</li>
+<li>connection.password</li>
+<li>connection.driver_class(com.mysql.cj.jdbc.Driver)</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"hbm2ddl.auto"</span>&gt;</span>update<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"show_sql"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dialect"</span>&gt;</span>org.hibernate.dialect.MySQLDialect<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.url"</span>&gt;</span>jdbc:mysql://localhost:3306/july11?serverTimezone=UTC<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.username"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.password"</span>&gt;</span>fbw950225<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.driver_class"</span>&gt;</span>com.mysql.cj.jdbc.Driver<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mapping</span> <span class="attr">resource</span>=<span class="string">"Emp-mapping.xml"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="2-classes"><a href="#2-classes" class="headerlink" title="2 classes"></a>2 classes</h5><ul>
+<li>main class: contains main method and steps of hibernate app</li>
+<li>entity class: the object which are getting into the db, getter setter toString(), Annotation</li>
+</ul>
+<h5 id="types-of-methods"><a href="#types-of-methods" class="headerlink" title="types of methods"></a>types of methods</h5><ul>
+<li>persist (without return type)</li>
+<li>save(with return type)</li>
+<li>get or load</li>
+<li>update</li>
+<li>delete</li>
+</ul>
+<h5 id="In-collection"><a href="#In-collection" class="headerlink" title="In collection"></a>In collection</h5><p>List(with index) Bag(withou index) Set Map</p>
+<h5 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h5><p>one-to-one</p>
+<p>one-to-many</p>
+<p>many-to-one</p>
+<p>many-to-many</p>
+]]></content>
+      <categories>
+        <category>interview</category>
+      </categories>
+      <tags>
+        <tag>Hibernate</tag>
+        <tag>Servlet</tag>
+        <tag>JSP</tag>
+        <tag>JDBC</tag>
+      </tags>
   </entry>
 </search>

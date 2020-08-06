@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hibernate," />
+  <meta name="keywords" content="Java," />
 
 
 
@@ -81,17 +81,17 @@
 
 
 
-<meta name="description" content="Hibernate one-to-many relationships : Map At first, let us talk about some simple condition, when we use some basic class String, Integer, Date in Map&lt;key, value&gt;.  Here, we create a Team class">
+<meta name="description" content="JDK and JREThe Java Runtime Environment (JRE) \is basically the Java Virtual Machine (JVM) where your Java programs are being executed. The Java Development Kit (JDK) is the full featured Software Dev">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hibernate one-to-many relationships : Map">
-<meta property="og:url" content="http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/index.html">
+<meta property="og:title" content="Java Core Interview">
+<meta property="og:url" content="http://fengbw.github.io/2020/08/05/java-core-interview/index.html">
 <meta property="og:site_name" content="Bowei&#39;s Blog">
-<meta property="og:description" content="Hibernate one-to-many relationships : Map At first, let us talk about some simple condition, when we use some basic class String, Integer, Date in Map&lt;key, value&gt;.  Here, we create a Team class">
+<meta property="og:description" content="JDK and JREThe Java Runtime Environment (JRE) \is basically the Java Virtual Machine (JVM) where your Java programs are being executed. The Java Development Kit (JDK) is the full featured Software Dev">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-07-28T01:30:28.000Z">
-<meta property="article:modified_time" content="2020-07-28T13:38:13.293Z">
+<meta property="article:published_time" content="2020-08-06T02:00:45.000Z">
+<meta property="article:modified_time" content="2020-08-06T02:02:20.038Z">
 <meta property="article:author" content="Bowei Feng">
-<meta property="article:tag" content="Hibernate">
+<meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
 
 
@@ -122,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/"/>
+  <link rel="canonical" href="http://fengbw.github.io/2020/08/05/java-core-interview/"/>
 
 
 
 
 
-  <title>Hibernate one-to-many relationships : Map | Bowei's Blog</title>
+  <title>Java Core Interview | Bowei's Blog</title>
   
 
 
@@ -299,7 +299,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://fengbw.github.io/2020/07/27/Hibernate-one-to-many-relationships-Map/">
+    <link itemprop="mainEntityOfPage" href="http://fengbw.github.io/2020/08/05/java-core-interview/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Bowei Feng">
@@ -316,7 +316,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hibernate one-to-many relationships : Map</h1>
+          <h1 class="post-title" itemprop="name headline">Java Core Interview</h1>
         
 
         <div class="post-meta">
@@ -328,8 +328,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-07-27T21:30:28-04:00">
-                2020-07-27
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-05T22:00:45-04:00">
+                2020-08-05
               </time>
             
 
@@ -338,6 +338,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/interview/" itemprop="url" rel="index">
+                    <span itemprop="name">interview</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -366,24 +388,105 @@
       
 
       
-        <h1 id="Hibernate-one-to-many-relationships-Map"><a href="#Hibernate-one-to-many-relationships-Map" class="headerlink" title="Hibernate one-to-many relationships : Map"></a>Hibernate one-to-many relationships : Map</h1><blockquote>
-<p>At first, let us talk about some simple condition, when we use some basic class String, Integer, Date in Map&lt;key, value&gt;.</p>
-</blockquote>
-<p>Here, we create a Team class as example:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hibernate.map;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Team</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> id; <span class="comment">//id for team</span></span><br><span class="line">  <span class="keyword">private</span> String name; <span class="comment">//name for team</span></span><br><span class="line">  <span class="keyword">private</span> Map&lt;<span class="keyword">long</span>,String&gt; students; <span class="comment">//there are several students in one team, long is id for student and String is name for student</span></span><br><span class="line">  <span class="comment">//ignore set() and get() methods</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h6 id="JDK-and-JRE"><a href="#JDK-and-JRE" class="headerlink" title="JDK and JRE"></a>JDK and JRE</h6><p><strong>The Java Runtime Environment (JRE) \</strong>is basically the Java Virtual Machine (<strong>JVM</strong>) where your Java programs are being executed.</p>
+<p><strong>The Java Development Kit (JDK)</strong> is the full featured Software Development Kit for Java, including the JRE, the compilers and tools (like JavaDoc, and Java Debugger)</p>
+<h6 id="JShell"><a href="#JShell" class="headerlink" title="JShell"></a>JShell</h6><p>The Java Shell tool (JShell) is an interactive tool for learning the Java programming language and prototyping Java code. JShell is a Read-Evaluate-Print Loop (REPL), which evaluates declarations, statements, and expressions as they are entered and immediately shows the results. The tool is run from the command line.</p>
+<h6 id="Encapsulation-Abstraction-polymorphism-Inheritance"><a href="#Encapsulation-Abstraction-polymorphism-Inheritance" class="headerlink" title="Encapsulation Abstraction polymorphism Inheritance"></a>Encapsulation Abstraction polymorphism Inheritance</h6><ul>
+<li>Encapsulation:Combining both data and code into single unit is called encapsulation.</li>
+<li>Abstraction :Presenting necessary things and hiding un necessary things is called abstraction.</li>
+<li>Polymorphism:One object is behaving differently in different situations we say that particular object is exhibiting polymorphism.</li>
+<li>Inheritance:Aquiring superclass properties from subclass is called inheritance.</li>
+</ul>
+<h6 id="2-types-exceptions"><a href="#2-types-exceptions" class="headerlink" title="2 types exceptions"></a>2 types exceptions</h6><p>checked exceptions and unchecked exceptions, <strong>checked exceptions</strong> must be declared in a method or a constructor’s throws clause</p>
+<h6 id="JVM"><a href="#JVM" class="headerlink" title="JVM"></a>JVM</h6><p>A Java virtual machine (JVM) is a process virtual machine that can execute Java bytecode.</p>
+<h6 id="static"><a href="#static" class="headerlink" title="static"></a>static</h6><p>The <code>static</code> keyword denotes that a member variable or method can be accessed, <em>without requiring an instantiation of the class to which it belongs</em>.</p>
+<p>A user cannot override static methods in Java, because method overriding is based upon dynamic binding at runtime and static methods are statically binded at compile time. A static method is not associated with any instance of a class so the concept is not applicable.</p>
+<h6 id="volatile"><a href="#volatile" class="headerlink" title="volatile"></a>volatile</h6><p><code>volatile</code> has semantics for memory visibility. Basically, the value of a volatile field becomes visible to all readers (other threads in particular) after a write operation completes on it.</p>
+<h6 id="overload-and-override"><a href="#overload-and-override" class="headerlink" title="overload and override"></a>overload and override</h6><ul>
+<li><p>Method <strong>overloading</strong> in Java occurs when two or more methods in the same class have the exact same name, but different parameters.</p>
+</li>
+<li><p>Method <strong>overriding</strong> is defined as the case when a child class redefines the same method as a parent class. Overridden methods must have the same name, argument list, and return type. The overriding method may not limit the access of the method it overrides.</p>
+</li>
+</ul>
+<h6 id="Data-Types-and-autoboxing-unboxing"><a href="#Data-Types-and-autoboxing-unboxing" class="headerlink" title="Data Types and autoboxing/unboxing"></a>Data Types and autoboxing/unboxing</h6><p>The eight primitive data types supported by the Java programming language are:</p>
+<ul>
+<li>byte</li>
+<li>short</li>
+<li>int</li>
+<li>long</li>
+<li>float</li>
+<li>double</li>
+<li>boolean</li>
+<li>char</li>
+</ul>
+<p><strong>Autoboxing</strong> is the automatic conversion made by the Java compiler between the primitive types and their corresponding object wrapper classes. If the conversion goes the other way, this operation is called <strong>unboxing</strong>.</p>
+<h6 id="abstract-and-interface"><a href="#abstract-and-interface" class="headerlink" title="abstract and interface"></a>abstract and interface</h6><ul>
+<li>All methods in an interface are implicitly abstract. On the other hand, an abstract class may contain both abstract and non-abstract methods.</li>
+<li>A class may implement a number of Interfaces, but can extend only one abstract class.</li>
+<li>In order for a class to implement an interface, it must implement all its declared methods. However, a class may not implement all declared methods of an abstract class. Though, in this case, the sub-class must also be declared as abstract.</li>
+<li>Abstract classes can implement interfaces without even providing the implementation of interface methods.</li>
+</ul>
+<h6 id="Collections-Framework"><a href="#Collections-Framework" class="headerlink" title="Collections Framework"></a>Collections Framework</h6><ul>
+<li><strong>Collection</strong>, which represents a group of objects known as its elements.</li>
+<li><strong>Set</strong>, which is a collection that cannot contain duplicate elements.</li>
+<li><strong>List</strong>, which is an ordered collection and can contain duplicate elements.</li>
+<li><strong>Map</strong>, which is an object that maps keys to values and cannot contain duplicate keys.</li>
+</ul>
+<h6 id="iterator"><a href="#iterator" class="headerlink" title="iterator"></a>iterator</h6><p>The <code>Iterator</code> interface provides a number of methods that are able to iterate over any Collection. Each Java <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html" target="_blank" rel="noopener">Collection</a> contains the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html" target="_blank" rel="noopener">Iterator</a> method that returns an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Iterator.html" target="_blank" rel="noopener">Iterator</a> instance. Iterators are capable of removing elements from the underlying collection during the iteration.</p>
+<h6 id="Array-and-ArrayList"><a href="#Array-and-ArrayList" class="headerlink" title="Array and ArrayList"></a>Array and ArrayList</h6><ul>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html" target="_blank" rel="noopener">Arrays</a> can contain primitive or objects, while an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> can contain only objects.</li>
+<li><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Arrays.html" target="_blank" rel="noopener">Arrays</a> have fixed size, while an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> is dynamic.</li>
+<li>An <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> provides more methods and features, such as addAll, removeAll, iterator, etc.</li>
+</ul>
+<h6 id="ArrayList-and-LinkedList"><a href="#ArrayList-and-LinkedList" class="headerlink" title="ArrayList and LinkedList"></a>ArrayList and LinkedList</h6><ul>
+<li>An <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a> is an index based data structure backed by an <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/reflect/Array.html" target="_blank" rel="noopener">Array</a>. It provides random access to its elements with a performance equal to O(1). On the other hand, a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> stores its data as list of elements and every element is linked to its previous and next element. In this case, the search operation for an element has execution time equal to O(n).</li>
+<li>The Insertion, addition and removal operations of an element are faster in a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> compared to an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a>, because there is no need of resizing an array or updating the index when an element is added in some arbitrary position inside the collection.</li>
+<li>A <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> consumes more memory than an <a href="http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html" target="_blank" rel="noopener">ArrayList</a>, because every node in a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/LinkedList.html" target="_blank" rel="noopener">LinkedList</a> stores two references, one for its previous element and one for its next element.</li>
+</ul>
+<h6 id="HashMap-and-HashTable"><a href="#HashMap-and-HashTable" class="headerlink" title="HashMap and HashTable"></a>HashMap and HashTable</h6><ol>
+<li><code>Hashtable</code> is synchronized, whereas <code>HashMap</code> is not. This makes <code>HashMap</code> better for non-threaded applications, as unsynchronized Objects typically perform better than synchronized ones.</li>
+<li><code>Hashtable</code> does not allow <code>null</code> keys or values. <code>HashMap</code> allows one <code>null</code> key and any number of <code>null</code> values.</li>
+<li>One of HashMap’s subclasses is <code>LinkedHashMap</code>, so in the event that you’d want predictable iteration order (which is insertion order by default), you could easily swap out the <code>HashMap</code> for a <code>LinkedHashMap</code>. This wouldn’t be as easy if you were using <code>Hashtable</code>.</li>
+</ol>
+<h6 id="HashMap-LinkedHashMap-and-TreeMap"><a href="#HashMap-LinkedHashMap-and-TreeMap" class="headerlink" title="HashMap, LinkedHashMap and TreeMap"></a>HashMap, LinkedHashMap and TreeMap</h6><ul>
+<li><code>HashMap</code> makes absolutely no guarantees about the iteration order. It can (and will) even change completely when new elements are added.</li>
+<li><code>TreeMap</code> will iterate according to the “natural ordering” of the keys according to their <code>compareTo()</code>method (or an externally supplied <code>Comparator</code>). Additionally, it implements the <code>SortedMap</code> interface, which contains methods that depend on this sort order.</li>
+<li><code>LinkedHashMap</code> will iterate in the order in which the entries were put into the map</li>
+</ul>
+<h6 id="HashSet-and-TreeSet"><a href="#HashSet-and-TreeSet" class="headerlink" title="HashSet and TreeSet"></a>HashSet and TreeSet</h6><p>The <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html" target="_blank" rel="noopener">HashSet</a> is Implemented using a hash table and thus, its elements are not ordered. The add, remove, and contains methods of a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/HashSet.html" target="_blank" rel="noopener">HashSet</a> have constant time complexity O(1). On the other hand, a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html" target="_blank" rel="noopener">TreeSet</a> is implemented using a tree structure. The elements in a <a href="http://docs.oracle.com/javase/7/docs/api/java/util/TreeSet.html" target="_blank" rel="noopener">TreeSet</a> are sorted, and thus, the add, remove, and contains methods have time complexity of O(logn).</p>
+<h6 id="garbage-collection"><a href="#garbage-collection" class="headerlink" title="garbage collection"></a>garbage collection</h6><p>The purpose of garbage collection is to identify and discard those objects that are no longer needed by the application, in order for the resources to be reclaimed and reused.</p>
+<h6 id="Exception-and-Error"><a href="#Exception-and-Error" class="headerlink" title="Exception and Error"></a>Exception and Error</h6><ul>
+<li>An <strong>Error</strong> “indicates serious problems that a reasonable application should not try to catch.”</li>
+<li>An <strong>Exception</strong> “indicates conditions that a reasonable application might want to catch.”</li>
+</ul>
+<h6 id="finally"><a href="#finally" class="headerlink" title="finally"></a>finally</h6><p>A <em>finally</em> block will always be executed, whether or not an exception is actually thrown. Even in the case where the catch statement is missing and an exception is thrown, the finally block will still be executed. Last thing to mention is that the finally block is used to release resources like I/O buffers, database connections, etc.</p>
+<h6 id="Serialization-and-Deserialization"><a href="#Serialization-and-Deserialization" class="headerlink" title="Serialization and Deserialization"></a>Serialization and Deserialization</h6><p>Java provides a mechanism, called object serialization where an object can be represented as a sequence of bytes and includes the object’s data, as well as information about the object’s type, and the types of data stored in the object.</p>
+<p>Deserialisation is the reverse process of converting an object from its flattened state to a live object.</p>
+<h6 id="trasient"><a href="#trasient" class="headerlink" title="trasient"></a>trasient</h6><p><strong>transient</strong> is a <strong>Java keyword</strong> which marks a member <strong>variable</strong> not to be serialized when it is persisted to streams of bytes. When an object is transferred through the network, the object needs to be ‘serialized’. Serialization converts the object state to serial bytes.</p>
+<h6 id="iterate-each-entry-in-Map"><a href="#iterate-each-entry-in-Map" class="headerlink" title="iterate each entry in Map"></a>iterate each entry in Map</h6><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String&gt; map = ...</span><br><span class="line"><span class="keyword">for</span> (Map.Entry&lt;String, String&gt; entry : map.entrySet()) &#123;</span><br><span class="line">    System.out.println(entry.getKey() + <span class="string">"/"</span> + entry.getValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>here is mapping.xml file:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">hibernate-mapping</span> <span class="meta-keyword">PUBLIC</span> </span></span><br><span class="line"><span class="meta">    <span class="meta-string">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.map.Team"</span> <span class="attr">table</span>=<span class="string">"team"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"ename"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">map</span> <span class="attr">name</span>=<span class="string">"students"</span> <span class="attr">table</span>=<span class="string">"student"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"team_id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">index</span> <span class="attr">column</span>=<span class="string">"student_id"</span> <span class="attr">type</span>=<span class="string">"long"</span>&gt;</span><span class="tag">&lt;/<span class="name">index</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">element</span> <span class="attr">column</span>=<span class="string">"student_name"</span> <span class="attr">type</span>=<span class="string">"string"</span>&gt;</span><span class="tag">&lt;/<span class="name">element</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>for &lt;map&gt;, hibernate will store Map&lt;&gt; students in another table, team_id is the foreign-key for this table, in this table, team_id and student_id is a comprised key.</p>
-<blockquote>
-<p>If students if Map&lt;long, Student&gt; where value is Student class</p>
-</blockquote>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.hibernate.map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Student</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">long</span> id;</span><br><span class="line">  <span class="keyword">private</span> String name;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> age;</span><br><span class="line">  <span class="keyword">private</span> Team team;</span><br><span class="line">  <span class="comment">//ignore set() and get() methods</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>the mapping.xml file is:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">hibernate-mapping</span> <span class="meta-keyword">PUBLIC</span> </span></span><br><span class="line"><span class="meta">    <span class="meta-string">"-//Hibernate/Hibernate Mapping DTD 3.0//EN"</span></span></span><br><span class="line"><span class="meta">    <span class="meta-string">"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">hibernate-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.map.Team"</span> <span class="attr">table</span>=<span class="string">"team"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"id"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"ename"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">map</span> <span class="attr">name</span>=<span class="string">"students"</span> <span class="attr">table</span>=<span class="string">"student"</span> <span class="attr">cascade</span>=<span class="string">"all"</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">key</span> <span class="attr">column</span>=<span class="string">"team_id"</span>&gt;</span><span class="tag">&lt;/<span class="name">key</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">index</span> <span class="attr">column</span>=<span class="string">"student_id"</span> <span class="attr">type</span>=<span class="string">"long"</span>&gt;</span><span class="tag">&lt;/<span class="name">index</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">ont-to-many</span> <span class="attr">class</span>=<span class="string">"com.hibernate.map.Student"</span>/&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">map</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">class</span> <span class="attr">name</span>=<span class="string">"com.hibernate.map.Student"</span> <span class="attr">table</span>=<span class="string">"student"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">id</span> <span class="attr">name</span>=<span class="string">"id"</span> <span class="attr">column</span>=<span class="string">"student_id"</span> <span class="attr">type</span>=<span class="string">"long"</span>&gt;</span><span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"name"</span> <span class="attr">column</span>=<span class="string">"student_name"</span> <span class="attr">type</span>=<span class="string">"string"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"age"</span> <span class="attr">column</span>=<span class="string">"age"</span> <span class="attr">type</span>=<span class="string">"int"</span>&gt;</span><span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">many-to-one</span> <span class="attr">name</span>=<span class="string">"team"</span> <span class="attr">class</span>=<span class="string">"com.hibernate.map.Team"</span> <span class="attr">column</span>=<span class="string">"team_id"</span> <span class="attr">cascade</span>=<span class="string">"none"</span>&gt;</span><span class="tag">&lt;/<span class="name">many-to-one</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">hibernate-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
+<h6 id="different-ways-for-thread"><a href="#different-ways-for-thread" class="headerlink" title="different ways for thread"></a>different ways for thread</h6><ul>
+<li>A class may extend the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Thread.html" target="_blank" rel="noopener">Thread</a> class.</li>
+<li>A class may implement the <a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Runnable.html" target="_blank" rel="noopener">Runnable</a> interface.</li>
+<li>An application can use the <a href="http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/Executor.html" target="_blank" rel="noopener">Executor</a> framework, in order to create a thread pool.</li>
+</ul>
+<h6 id="deadlock"><a href="#deadlock" class="headerlink" title="deadlock"></a>deadlock</h6><p>A condition that occurs when <a href="http://www.javacodegeeks.com/2013/01/java-deadlock-example-how-to-analyze-deadlock-situation.html" target="_blank" rel="noopener">two processes are waiting for each other to complete</a>, before proceeding. The result is that both processes wait endlessly.</p>
+<h6 id="comparable-and-comparator"><a href="#comparable-and-comparator" class="headerlink" title="comparable and comparator"></a>comparable and comparator</h6><ul>
+<li>if sorting of objects needs to be based on natural order then use Comparable whereas if you sorting needs to be done on attributes of different objects, then use Comparator</li>
+<li>A comparable object is capable of comparing itself with another object. The class itself must implements the java.lang.Comparable interface to compare its instances.</li>
+<li>Comparator is external to the element type we are comparing. It’s a separate class. We create multiple separate classes (that implement Comparator) to compare by different members.</li>
+</ul>
+<h6 id="finalize"><a href="#finalize" class="headerlink" title="finalize()"></a>finalize()</h6><p>The finalize method is called by the garbage collector, just before releasing the object’s memory. It is normally advised to release resources held by the object inside the finalize method.</p>
+<h6 id="StringBuffer-and-StringBulider"><a href="#StringBuffer-and-StringBulider" class="headerlink" title="StringBuffer and StringBulider"></a>StringBuffer and StringBulider</h6><ul>
+<li><p><code>StringBuffer</code> is synchronized, <code>StringBuilder</code> is not.</p>
+</li>
+<li><p><code>StringBuilder</code> is faster than <code>StringBuffer</code> because it’s not synchronized.</p>
+</li>
+</ul>
+<h6 id="throw-and-throws"><a href="#throw-and-throws" class="headerlink" title="throw and throws"></a>throw and throws</h6><p>The <code>throw</code> keyword is used to explicitly raise a exception within the program. On the contrary, the <code>throws</code> clause is used to indicate those exceptions that are not handled by a method. Each method must explicitly specify which exceptions does not handle, so the callers of that method can guard against possible exceptions. Finally, multiple exceptions are separated by a comma.</p>
+<h6 id="pass-by-reference-or-pass-by-value"><a href="#pass-by-reference-or-pass-by-value" class="headerlink" title="pass-by-reference or pass-by-value"></a>pass-by-reference or pass-by-value</h6><p>Java is always <strong>pass-by-value</strong>. Unfortunately, when we pass the value of an object, we are passing the <em>reference</em> to it. There is no such thing as “pass-by-reference” in Java.</p>
 
       
     </div>
@@ -401,7 +504,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hibernate/" rel="tag"># Hibernate</a>
+            <a href="/tags/Java/" rel="tag"># Java</a>
           
         </div>
       
@@ -414,8 +517,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/07/19/my-first-blog/" rel="next" title="My First Blog">
-                <i class="fa fa-chevron-left"></i> My First Blog
+              <a href="/2020/07/27/Hibernate-one-to-many-relationships-Map/" rel="next" title="Hibernate one-to-many relationships : Map">
+                <i class="fa fa-chevron-left"></i> Hibernate one-to-many relationships : Map
               </a>
             
           </div>
@@ -424,8 +527,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/08/05/java-core-interview/" rel="prev" title="Java Core Interview">
-                Java Core Interview <i class="fa fa-chevron-right"></i>
+              <a href="/2020/08/05/servlet-jsp-jdbc-hibernate-interview/" rel="prev" title="Servlet JSP JDBC Hibernate Interview">
+                Servlet JSP JDBC Hibernate Interview <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -579,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate-one-to-many-relationships-Map"><span class="nav-number">1.</span> <span class="nav-text">Hibernate one-to-many relationships : Map</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#JDK-and-JRE"><span class="nav-number">1.</span> <span class="nav-text">JDK and JRE</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JShell"><span class="nav-number">2.</span> <span class="nav-text">JShell</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Encapsulation-Abstraction-polymorphism-Inheritance"><span class="nav-number">3.</span> <span class="nav-text">Encapsulation Abstraction polymorphism Inheritance</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-types-exceptions"><span class="nav-number">4.</span> <span class="nav-text">2 types exceptions</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JVM"><span class="nav-number">5.</span> <span class="nav-text">JVM</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#static"><span class="nav-number">6.</span> <span class="nav-text">static</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#volatile"><span class="nav-number">7.</span> <span class="nav-text">volatile</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#overload-and-override"><span class="nav-number">8.</span> <span class="nav-text">overload and override</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Data-Types-and-autoboxing-unboxing"><span class="nav-number">9.</span> <span class="nav-text">Data Types and autoboxing&#x2F;unboxing</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#abstract-and-interface"><span class="nav-number">10.</span> <span class="nav-text">abstract and interface</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Collections-Framework"><span class="nav-number">11.</span> <span class="nav-text">Collections Framework</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#iterator"><span class="nav-number">12.</span> <span class="nav-text">iterator</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Array-and-ArrayList"><span class="nav-number">13.</span> <span class="nav-text">Array and ArrayList</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ArrayList-and-LinkedList"><span class="nav-number">14.</span> <span class="nav-text">ArrayList and LinkedList</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashMap-and-HashTable"><span class="nav-number">15.</span> <span class="nav-text">HashMap and HashTable</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashMap-LinkedHashMap-and-TreeMap"><span class="nav-number">16.</span> <span class="nav-text">HashMap, LinkedHashMap and TreeMap</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#HashSet-and-TreeSet"><span class="nav-number">17.</span> <span class="nav-text">HashSet and TreeSet</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#garbage-collection"><span class="nav-number">18.</span> <span class="nav-text">garbage collection</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Exception-and-Error"><span class="nav-number">19.</span> <span class="nav-text">Exception and Error</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#finally"><span class="nav-number">20.</span> <span class="nav-text">finally</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Serialization-and-Deserialization"><span class="nav-number">21.</span> <span class="nav-text">Serialization and Deserialization</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#trasient"><span class="nav-number">22.</span> <span class="nav-text">trasient</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#iterate-each-entry-in-Map"><span class="nav-number">23.</span> <span class="nav-text">iterate each entry in Map</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#different-ways-for-thread"><span class="nav-number">24.</span> <span class="nav-text">different ways for thread</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#deadlock"><span class="nav-number">25.</span> <span class="nav-text">deadlock</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#comparable-and-comparator"><span class="nav-number">26.</span> <span class="nav-text">comparable and comparator</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#finalize"><span class="nav-number">27.</span> <span class="nav-text">finalize()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#StringBuffer-and-StringBulider"><span class="nav-number">28.</span> <span class="nav-text">StringBuffer and StringBulider</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#throw-and-throws"><span class="nav-number">29.</span> <span class="nav-text">throw and throws</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#pass-by-reference-or-pass-by-value"><span class="nav-number">30.</span> <span class="nav-text">pass-by-reference or pass-by-value</span></a></li></ol></div>
             
 
           </div>

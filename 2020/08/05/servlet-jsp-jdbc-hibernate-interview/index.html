@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hibernate,Servlet,JSP,JDBC," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Bowei's Blog" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="JDBCwhat is jdbcJDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition). JDBC API uses JDBC dr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Servlet JSP JDBC Hibernate Interview">
+<meta property="og:url" content="http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/index.html">
+<meta property="og:site_name" content="Bowei&#39;s Blog">
+<meta property="og:description" content="JDBCwhat is jdbcJDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition). JDBC API uses JDBC dr">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-06T02:03:00.000Z">
+<meta property="article:modified_time" content="2020-08-06T02:03:58.406Z">
+<meta property="article:author" content="Bowei Feng">
+<meta property="article:tag" content="Hibernate">
+<meta property="article:tag" content="Servlet">
+<meta property="article:tag" content="JSP">
+<meta property="article:tag" content="JDBC">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/"/>
+
+
+
+
+
+  <title>Servlet JSP JDBC Hibernate Interview | Bowei's Blog</title>
+  
+
+
+
+
+
+
+
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bowei's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="Searching..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://fengbw.github.io/2020/08/05/servlet-jsp-jdbc-hibernate-interview/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bowei Feng">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/header.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bowei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Servlet JSP JDBC Hibernate Interview</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-08-05T22:03:00-04:00">
+                2020-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/interview/" itemprop="url" rel="index">
+                    <span itemprop="name">interview</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="JDBC"><a href="#JDBC" class="headerlink" title="JDBC"></a>JDBC</h1><h4 id="what-is-jdbc"><a href="#what-is-jdbc" class="headerlink" title="what is jdbc"></a>what is jdbc</h4><p>JDBC stands for Java Database Connectivity. JDBC is a Java API to connect and execute the query with the database. It is a part of JavaSE (Java Standard Edition). JDBC API uses JDBC drivers to connect with the database. There are four types of JDBC drivers:</p>
+<ul>
+<li>JDBC-ODBC Bridge Driver</li>
+<li>Native Driver</li>
+<li>Network Protocol Driver</li>
+<li>Thin Driver</li>
+</ul>
+<p>We can use JDBC API to access tabular data stored in any relational database. By the help of JDBC API, we can save, update, delete and fetch data from the database.</p>
+<h5 id="How-to-connect"><a href="#How-to-connect" class="headerlink" title="How to connect"></a>How to connect</h5><ul>
+<li><p>Register the Driver class</p>
+<p>The <strong>forName()</strong> method of Class class is used to register the driver class. This method is used to dynamically load the driver class.</p>
+</li>
+<li><p>Create connection</p>
+<p>The <strong>getConnection()</strong> method of DriverManager class is used to establish connection with the database.</p>
+</li>
+<li><p>Create statement</p>
+<p>The createStatement() method of Connection interface is used to create statement. The object of statement is responsible to execute queries with the database.</p>
+</li>
+<li><p>Execute queries</p>
+<p>The executeQuery() method of Statement interface is used to execute queries to the database. This method returns the object of ResultSet that can be used to get all the records of a table.</p>
+</li>
+<li><p>Close connection</p>
+<p>By closing connection object statement and ResultSet will be closed automatically. The close() method of Connection interface is used to close the connection.</p>
+</li>
+</ul>
+<h5 id="Connection-interface"><a href="#Connection-interface" class="headerlink" title="Connection interface"></a>Connection interface</h5><ul>
+<li><p><strong>createStatement():</strong> creates a statement object that can be used to execute SQL queries</p>
+</li>
+<li><p><strong>commit():</strong> saves the changes made since the previous commit/rollback permanent</p>
+</li>
+<li><p><strong>rollback():</strong> Drops all changes made since the previous commit/rollback</p>
+</li>
+<li><p><strong>close():</strong> closes the connection and Releases a JDBC resources immediately</p>
+</li>
+</ul>
+<h5 id="Statement-interface"><a href="#Statement-interface" class="headerlink" title="Statement interface"></a>Statement interface</h5><table>
+<thead>
+<tr>
+<th><strong>1) public ResultSet executeQuery(String sql):</strong> is used to execute SELECT query. It returns the object of ResultSet</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>2) public int executeUpdate(String sql):</strong> is used to execute specified query, it may be create, drop, insert, update, delete etc.</td>
+</tr>
+<tr>
+<td><strong>3) public boolean execute(String sql):</strong> is used to execute queries that may return multiple results.</td>
+</tr>
+<tr>
+<td><strong>4) public int[] executeBatch():</strong> is used to execute batch of commands.</td>
+</tr>
+</tbody></table>
+<h5 id="ResultSet-interface"><a href="#ResultSet-interface" class="headerlink" title="ResultSet interface"></a>ResultSet interface</h5><p>The object of ResultSet maintains a cursor pointing to a row of a table. Initially, cursor points to before the first row.</p>
+<ul>
+<li>next()</li>
+<li>getInt(int row) or getInt(String colimnName)</li>
+<li>getString(int row) or getString(String colimnName)</li>
+</ul>
+<h5 id="PreparedStatement-interface"><a href="#PreparedStatement-interface" class="headerlink" title="PreparedStatement interface"></a>PreparedStatement interface</h5><p>The PreparedStatement interface is a subinterface of Statement. It is used to execute parameterized query.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String sql=<span class="string">"insert into emp values(?,?,?)"</span>;</span><br></pre></td></tr></table></figure>
+
+<p>As you can see, we are passing parameter (?)(question mark) for the values. Its value will be set by calling the setter methods of PreparedStatement.</p>
+<p><strong>Improves performance</strong>: The performance of the application will be faster if you use PreparedStatement interface because query is compiled only once.</p>
+<p>setInt() setString() setFloat() setDouble() executeQuery() executeUpdate()</p>
+<h5 id="ResultSetMetaData-Interface"><a href="#ResultSetMetaData-Interface" class="headerlink" title="ResultSetMetaData Interface"></a>ResultSetMetaData Interface</h5><p>The metadata means data about data i.e. we can get further information from the data. If you have to get metadata of a table like total number of column, column name, column type etc. , ResultSetMetaData interface is useful because it provides methods to get metadata from the ResultSet object.</p>
+<p>getColumnCount() getColumnName() getColumnTypeName() getTableName()</p>
+<p>The <strong>getMetaData()</strong> method of ResultSet interface returns the object of ResultSetMetaData</p>
+<h5 id="image"><a href="#image" class="headerlink" title="image"></a>image</h5><p>You can store images in the database in java by the help of <strong>PreparedStatement</strong> interface.</p>
+<p>The <strong>setBinaryStream()</strong> method of PreparedStatement is used to set Binary information into the parameterIndex.</p>
+<p><strong>setBinaryStream(int paramIndex,InputStream stream)</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">FileInputStream fin=<span class="keyword">new</span> FileInputStream(<span class="string">"d:\\g.jpg"</span>);  </span><br><span class="line">ps.setBinaryStream(<span class="number">2</span>,fin,fin.available());</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="file"><a href="#file" class="headerlink" title="file"></a>file</h5><p>The <strong>setCharacterStream()</strong> method of PreparedStatement is used to set character information into the parameterIndex.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">File f=<span class="keyword">new</span> File(<span class="string">"d:\\myfile.txt"</span>);  </span><br><span class="line">FileReader fr=<span class="keyword">new</span> FileReader(f);  </span><br><span class="line"></span><br><span class="line">ps.setInt(<span class="number">1</span>,<span class="number">101</span>);  </span><br><span class="line">ps.setCharacterStream(<span class="number">2</span>,fr,(<span class="keyword">int</span>)f.length());</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="CallableStatement-Interface"><a href="#CallableStatement-Interface" class="headerlink" title="CallableStatement Interface"></a>CallableStatement Interface</h5><p>CallableStatement interface is used to call the <strong>stored procedures and functions</strong>.</p>
+<p>We can have business logic on the database by the use of stored procedures and functions that will make the performance better because these are precompiled.</p>
+<h5 id="Transaction-Management-in-JDBC"><a href="#Transaction-Management-in-JDBC" class="headerlink" title="Transaction Management in JDBC"></a>Transaction Management in JDBC</h5><ul>
+<li>setAutoCommit(boolean status): tt is true bydefault means each transaction is committed bydefault</li>
+<li>void commit(): commits the transaction</li>
+<li>void rollback(): cancels the transaction.</li>
+</ul>
+<h1 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h1><h5 id="what-is-Servlet"><a href="#what-is-Servlet" class="headerlink" title="what is Servlet"></a>what is Servlet</h5><p><strong>Servlet</strong> technology is used to create a web application (resides at server side and generates a dynamic web page)</p>
+<p>Servlet is a Server side Technology<br>It will support Thread based Components</p>
+<ul>
+<li>Two Packages</li>
+</ul>
+<p>import javax.servlet.*;</p>
+<p>import javax.servlet.http.*</p>
+<ul>
+<li>Life Cycle Stages:</li>
+</ul>
+<p>init()</p>
+<p>service()</p>
+<p>destroy()</p>
+<ul>
+<li>Servlet Architecture Flow:</li>
+</ul>
+<p>It is the communication between Web Client(User) and Web Server.</p>
+<p>Inside Web Server, it will have Web Container.</p>
+<p>By using init(), Web Container will initialise the request which came from the client(Web User).</p>
+<p>Web Container will create one Thread Internally, By using service(), Web Server will process the response.</p>
+<p>After sending Response to the Web User, For killing of the Thread we will use destroy().</p>
+<ul>
+<li>3 types of Servlet:</li>
+</ul>
+<p>Servlet(Interface)—-init(),service(),destroy()</p>
+<p>Generic Servlet(Abstract Class)—service()</p>
+<p>HTTP Servlet(class)—service()–doGet(),doPost()</p>
+<h1 id="JSP"><a href="#JSP" class="headerlink" title="JSP"></a>JSP</h1><h5 id="JSP-Scripting-elements"><a href="#JSP-Scripting-elements" class="headerlink" title="JSP Scripting elements"></a>JSP Scripting elements</h5><p>The scripting elements provides the ability to insert java code inside the jsp. There are three types of scripting elements:</p>
+<ul>
+<li>scriptlet tag</li>
+<li>expression tag</li>
+<li>declaration tag</li>
+</ul>
+<h5 id="JSP-scriptlet-tag"><a href="#JSP-scriptlet-tag" class="headerlink" title="JSP scriptlet tag"></a>JSP scriptlet tag</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%java source code %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="JSP-expression-tag"><a href="#JSP-expression-tag" class="headerlink" title="JSP expression tag"></a>JSP expression tag</h5><figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%=  statement %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="JSP-Declaration-Tag"><a href="#JSP-Declaration-Tag" class="headerlink" title="JSP Declaration Tag"></a>JSP Declaration Tag</h5> <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%!  field or method declaration %&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<table>
+<thead>
+<tr>
+<th align="left">Jsp Scriptlet Tag</th>
+<th align="left">Jsp Declaration Tag</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">The jsp scriptlet tag can only declare variables not methods.</td>
+<td align="left">The jsp declaration tag can declare variables as well as methods.</td>
+</tr>
+<tr>
+<td align="left">The declaration of scriptlet tag is placed inside the _jspService() method.</td>
+<td align="left">The declaration of jsp declaration tag is placed outside the _jspService() method.</td>
+</tr>
+</tbody></table>
+<h5 id="JSP-Implicit-Objects"><a href="#JSP-Implicit-Objects" class="headerlink" title="JSP Implicit Objects"></a>JSP Implicit Objects</h5><p>There are <strong>9 jsp implicit objects</strong>. These objects are <em>created by the web container</em> that are available to all the jsp pages</p>
+<p>out, request, response, config, session, application, page context, page, exception</p>
+<h5 id="JSP-directives"><a href="#JSP-directives" class="headerlink" title="JSP directives"></a>JSP directives</h5><p>The <strong>jsp directives</strong> are messages that tells the web container how to translate a JSP page into the corresponding servlet</p>
+<ul>
+<li>page directive</li>
+<li>include directive</li>
+<li>tag lib directive</li>
+</ul>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ directive attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>page directive</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ page attribute=<span class="string">"value"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>import contentType language info errorPage, etc</p>
+</li>
+<li><p>include directive</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"resourceName"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The include directive is used to include the contents of any resource it may be jsp file, html file or text file</p>
+</li>
+<li><p>tag lib directive</p>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">"uriofthetaglibrary"</span> prefix=<span class="string">"prefixoftaglibrary"</span> %&gt;</span><br></pre></td></tr></table></figure>
+
+<p>The JSP taglib directive is used to define a tag library that defines many tags. We use the TLD (Tag Library Descriptor) file to define the tags</p>
+</li>
+</ul>
+<h5 id="JSP-Action"><a href="#JSP-Action" class="headerlink" title="JSP Action"></a>JSP Action</h5><p>There are many JSP action tags or elements. Each JSP action tag is used to perform some specific tasks.</p>
+<p>The action tags are used to control the flow between pages and to use Java Bean.</p>
+<p>jsp:forward jsp:include jsp:param jsp:useBean</p>
+<h1 id="Hibernate"><a href="#Hibernate" class="headerlink" title="Hibernate"></a>Hibernate</h1><h5 id="what-is-hibernate"><a href="#what-is-hibernate" class="headerlink" title="what is hibernate"></a>what is hibernate</h5><ul>
+<li><p>Hibernate is a Java framework that simplifies the development of Java application to interact with the database.</p>
+</li>
+<li><p>It is an open source, lightweight, ORM (Object Relational Mapping) tool.</p>
+<p>An ORM tool simplifies the data creation, data manipulation and data access. It is a programming technique that maps the object to the data stored in the database.</p>
+</li>
+<li><p>Hibernate implements the specifications of JPA (Java Persistence API) for data persistence.</p>
+<p>Java Persistence API (JPA) is a Java specification that provides certain functionality and standard to ORM tools.</p>
+</li>
+</ul>
+<h5 id="Hibernate-Architecture"><a href="#Hibernate-Architecture" class="headerlink" title="Hibernate Architecture"></a>Hibernate Architecture</h5><p>Session Factory</p>
+<p>Session</p>
+<p>Transaction</p>
+<p>ConnectionProvider</p>
+<p>Transaction Factory</p>
+<h5 id="Steps-to-create-Hibernate-App"><a href="#Steps-to-create-Hibernate-App" class="headerlink" title="Steps to create Hibernate App"></a>Steps to create Hibernate App</h5><ol>
+<li>Create configuration object -&gt; config files and mapping files</li>
+<li>session factory object -&gt;which java object should match which table and what table to be created</li>
+<li>session object -&gt;perform db operations and tables</li>
+<li>transaction object -&gt;if all steps are executed successfully then onlu it will update the db</li>
+<li>close the session</li>
+</ol>
+<h5 id="4-files"><a href="#4-files" class="headerlink" title="4 files"></a>4 files</h5><p>entity class</p>
+<p>hibernate-mapping.xml</p>
+<p>hibernate-config.xml</p>
+<p>main class</p>
+<h5 id="configuration"><a href="#configuration" class="headerlink" title="configuration"></a>configuration</h5><ul>
+<li><strong>hbm2ddl.auto:</strong> which operationto be performed will be possible</li>
+<li><strong>show_sql:</strong> display query in STS console</li>
+<li><strong>dialect:</strong> it will talk to driver implementation for specifying the type of db used in hibernate(org.hibernate.dialect.MySQLDialect)</li>
+<li>connection.url</li>
+<li>connection.username</li>
+<li>connection.password</li>
+<li>connection.driver_class(com.mysql.cj.jdbc.Driver)</li>
+</ul>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"hbm2ddl.auto"</span>&gt;</span>update<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"show_sql"</span>&gt;</span>true<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"dialect"</span>&gt;</span>org.hibernate.dialect.MySQLDialect<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.url"</span>&gt;</span>jdbc:mysql://localhost:3306/july11?serverTimezone=UTC<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.username"</span>&gt;</span>root<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.password"</span>&gt;</span>fbw950225<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">property</span> <span class="attr">name</span>=<span class="string">"connection.driver_class"</span>&gt;</span>com.mysql.cj.jdbc.Driver<span class="tag">&lt;/<span class="name">property</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">mapping</span> <span class="attr">resource</span>=<span class="string">"Emp-mapping.xml"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h5 id="2-classes"><a href="#2-classes" class="headerlink" title="2 classes"></a>2 classes</h5><ul>
+<li>main class: contains main method and steps of hibernate app</li>
+<li>entity class: the object which are getting into the db, getter setter toString(), Annotation</li>
+</ul>
+<h5 id="types-of-methods"><a href="#types-of-methods" class="headerlink" title="types of methods"></a>types of methods</h5><ul>
+<li>persist (without return type)</li>
+<li>save(with return type)</li>
+<li>get or load</li>
+<li>update</li>
+<li>delete</li>
+</ul>
+<h5 id="In-collection"><a href="#In-collection" class="headerlink" title="In collection"></a>In collection</h5><p>List(with index) Bag(withou index) Set Map</p>
+<h5 id="Relations"><a href="#Relations" class="headerlink" title="Relations"></a>Relations</h5><p>one-to-one</p>
+<p>one-to-many</p>
+<p>many-to-one</p>
+<p>many-to-many</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hibernate/" rel="tag"># Hibernate</a>
+          
+            <a href="/tags/Servlet/" rel="tag"># Servlet</a>
+          
+            <a href="/tags/JSP/" rel="tag"># JSP</a>
+          
+            <a href="/tags/JDBC/" rel="tag"># JDBC</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/08/05/java-core-interview/" rel="next" title="Java Core Interview">
+                <i class="fa fa-chevron-left"></i> Java Core Interview
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/header.jpg"
+                alt="Bowei Feng" />
+            
+              <p class="site-author-name" itemprop="name">Bowei Feng</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/fengbw" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#JDBC"><span class="nav-number">1.</span> <span class="nav-text">JDBC</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#what-is-jdbc"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">what is jdbc</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#How-to-connect"><span class="nav-number">1.0.0.1.1.</span> <span class="nav-text">How to connect</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Connection-interface"><span class="nav-number">1.0.0.1.2.</span> <span class="nav-text">Connection interface</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Statement-interface"><span class="nav-number">1.0.0.1.3.</span> <span class="nav-text">Statement interface</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ResultSet-interface"><span class="nav-number">1.0.0.1.4.</span> <span class="nav-text">ResultSet interface</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#PreparedStatement-interface"><span class="nav-number">1.0.0.1.5.</span> <span class="nav-text">PreparedStatement interface</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#ResultSetMetaData-Interface"><span class="nav-number">1.0.0.1.6.</span> <span class="nav-text">ResultSetMetaData Interface</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#image"><span class="nav-number">1.0.0.1.7.</span> <span class="nav-text">image</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#file"><span class="nav-number">1.0.0.1.8.</span> <span class="nav-text">file</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#CallableStatement-Interface"><span class="nav-number">1.0.0.1.9.</span> <span class="nav-text">CallableStatement Interface</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Transaction-Management-in-JDBC"><span class="nav-number">1.0.0.1.10.</span> <span class="nav-text">Transaction Management in JDBC</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Servlet"><span class="nav-number">2.</span> <span class="nav-text">Servlet</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#what-is-Servlet"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">what is Servlet</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#JSP"><span class="nav-number">3.</span> <span class="nav-text">JSP</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-Scripting-elements"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">JSP Scripting elements</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-scriptlet-tag"><span class="nav-number">3.0.0.0.2.</span> <span class="nav-text">JSP scriptlet tag</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-expression-tag"><span class="nav-number">3.0.0.0.3.</span> <span class="nav-text">JSP expression tag</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-Declaration-Tag"><span class="nav-number">3.0.0.0.4.</span> <span class="nav-text">JSP Declaration Tag</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-Implicit-Objects"><span class="nav-number">3.0.0.0.5.</span> <span class="nav-text">JSP Implicit Objects</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-directives"><span class="nav-number">3.0.0.0.6.</span> <span class="nav-text">JSP directives</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#JSP-Action"><span class="nav-number">3.0.0.0.7.</span> <span class="nav-text">JSP Action</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hibernate"><span class="nav-number">4.</span> <span class="nav-text">Hibernate</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#what-is-hibernate"><span class="nav-number">4.0.0.0.1.</span> <span class="nav-text">what is hibernate</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Hibernate-Architecture"><span class="nav-number">4.0.0.0.2.</span> <span class="nav-text">Hibernate Architecture</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Steps-to-create-Hibernate-App"><span class="nav-number">4.0.0.0.3.</span> <span class="nav-text">Steps to create Hibernate App</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#4-files"><span class="nav-number">4.0.0.0.4.</span> <span class="nav-text">4 files</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#configuration"><span class="nav-number">4.0.0.0.5.</span> <span class="nav-text">configuration</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-classes"><span class="nav-number">4.0.0.0.6.</span> <span class="nav-text">2 classes</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#types-of-methods"><span class="nav-number">4.0.0.0.7.</span> <span class="nav-text">types of methods</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#In-collection"><span class="nav-number">4.0.0.0.8.</span> <span class="nav-text">In collection</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Relations"><span class="nav-number">4.0.0.0.9.</span> <span class="nav-text">Relations</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bowei Feng</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
